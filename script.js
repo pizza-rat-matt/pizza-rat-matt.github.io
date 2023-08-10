@@ -60,7 +60,7 @@ function populateInitialBalls() {
     const ball = new Ball(x, y, impact);
 
     // Optional: Set properties like name and effortLevel
-    ball.name = "Ball " + (i + 1);
+    ball.name = "asd";
     ball.effortLevel = "high"; // Or randomize this, if you'd like
 
     balls.push(ball);

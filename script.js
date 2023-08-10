@@ -57,7 +57,7 @@ class Ball {
         ctx.fillStyle = '#fff';
         ctx.font = '60px sans-serif';
         ctx.fillText(this.name, this.x, this.y);
-        console.log('we drew')
+        console.log('who is drew?')
 
     }
 

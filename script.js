@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const initBalls = {
+const initBalls = [
     'Talk to me':{
         impact: 1,
         urgency: 1,
@@ -17,7 +17,7 @@ const initBalls = {
         effort: 1,
         comments: 'as'
     },
-}
+]
 
 const balls = [];
 
@@ -58,11 +58,11 @@ class Ball {
 
 function populateInitialBalls() {
 
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // initBalls.forEach(ball => {
-    //     const bally = new Ball("Slim Shady", Math.random(), Math.random());
-    //     balls.push(bally);
-    // });
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    initBalls.forEach(ball => {
+        const bally = new Ball("Slim Shady", Math.random(), Math.random());
+        balls.push(bally);
+    });
 
     for (let i = 0; i < 5; i++) { // Creates 5 balls. Change the number if needed.
         const x = Math.random() * canvas.width;

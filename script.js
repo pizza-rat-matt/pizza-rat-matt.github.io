@@ -60,7 +60,7 @@ function populateInitialBalls() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     initBalls.forEach(ball => {
-        const bally = new Ball(ball.name, canvas.width/2, canvas.height/2);
+        const bally = new Ball(ball.name, canvas.width/2, canvas.height/2, ball.impact, ball.urgency, ball.effort, ball.comments);
         console.log(ball.name)
         balls.push(bally);
     });

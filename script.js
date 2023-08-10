@@ -40,12 +40,30 @@ class Ball {
     }
 }
 
-// Create ball at mouse/tap position
+let clickX, clickY; // Variables to store click position
+
 canvas.addEventListener('click', (e) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
-    balls.push(new Ball(posX, posY));
+    clickX = e.clientX;
+    clickY = e.clientY;
+    document.getElementById('ballForm').style.display = 'block'; // Display the form
 });
+
+function addBall() {
+    const ballName = document.getElementById('ballName').value;
+    const effortLevel = document.getElementById('effortLevel').value;
+    
+    const ball = new Ball(clickX, clickY);
+    ball.name = ballName;
+    ball.effortLevel = effortLevel;
+
+    // You can add logic here to change the ball's behavior based on the "effortLevel" if desired
+
+    balls.push(ball);
+
+    // Clear the form and hide it
+    document.getElementById('ballName').value = "";
+    document.getElementById('ballForm').style.display = 'none';
+}
 
 // Update canvas
 function animate() {

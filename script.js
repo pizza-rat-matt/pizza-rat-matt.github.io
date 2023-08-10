@@ -53,7 +53,7 @@ class Ball {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
-        ctx.fillText(this.name, 10, 50);
+        ctx.fillText(this.name, this.x, this.y);
         ctx.fill();
     }
 

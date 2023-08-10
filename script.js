@@ -1,6 +1,8 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+// TODO: http://sketch.paperjs.org/#V/0.12.7/S/rVhfb9s2EP8qnIHVUmzLdtMOhT1ngDvsacUCZOhL6gdaom0msiRQlBOv8HffkRRlUqTiLJ2AIPLx7nh/fnc86nsvw3vSm/XuHgmPd71hL84T8XtTZTGneYaWOE0DNkTFEB2GSHCH6Ps39i1D8PAdLSOGE1qVaIHY3KIXOc04kAubfCAxzxnQDzZ9j5+/khjo04/2Qlbt78h2T6SyL5jvok2a5yxgaIyu0QC9D23+dV5lyV+bTUmEwP2qc3VZbTYejpIm5FbYXp4X9d/ZObADljPyhG7hNWhCIp4NTdPPeZqzGbLo4tlVZKa8YDhL8n0Qoit0/ctk2GYsMa8YFjmYoamzumZ0u+MZKUtYNRdPFus6JVnyBVI6Q/1USBDW1+uncG66NR6jz4xgThBGnDxzRDnZI56jhJZFio/gN5H5j6xASNY6ECJof8NvOxpxnnFI3kwKW9Y9VCWnGxrXXvZjYPMbqEkbQE5wwAxR2HMyh3+/tkECxMEgtAPfznxUVOUuMNB7hlAXUF4jIkAR4SQJmmgEoYftDDCl9MztoAVn2xRyB/gAsLer4QpRBxeQ7y3ftTFhWHESLycdU1HdUcFynvNjQSCmjQWQfUAf7K07QeCLabwj8eMyZwlhZWC7SjcoMAo+UpahG7PaQ7c+PCILU8Ta4+SmQDadwcLU42agKhLw7W6HC2JYrUpH/zJd646CwGJJ/xGhO1DyFIl3fxikZdEzAHZkoqgjApp7IbVHTzSBQAzMhtsdCGfLm04ll7cfvWXL43/y8qi93BHRot7o5lG76dNy2YDLftrwMCB0AR2qWksNY9kkNNHa6Y3NTTxa3z1dNeeuFN0SfqfbTUBD1zN/Eyv3eQ6nWvh/2dfkyuiqYKtWUI8QY/TBI9tY1pJdtGXnbclTmyCMz9SBFVBAyDREPzsu+IQKRg5K6AZNQvQb+D5CUzRzejJQvQpyPY94PHEEamboYuaBA7rVQgjOGkOSR8qNtfB6pWvCXBCerYTG95b+a0e971A00uAkR+l6GXAwc9ymOCZytpCTBObyXU0CoEP+kpB0gCr4AewllXOqWV2a2NHZYcqJuVG0a0/VwtDTZEs1Caik34GIs5gEa0VzDzwpZoN6gNb69d07pfenhQCRA3SJkwNhKS5a4DZ0jKQKL8YSyuQAbXRFYNe2RlnO9jiFDhnoTa7QJJpMP4b+XNeDOuBJKnaY1ppjZHJ4VcU4jZcCICUE26PIWBf8HQapllvz+dS8wNDRxSGpyzNwL2JC3hfs6M7bXHJkE1kQ7JH6BZ3m00T0GhjkLAFGYMjP3AoyrjlKw1jOgFfuJKtmpHDVgfVzZF9w7gcau5DixWtOG829/pOIal1HduwDXvj5eSK0F5frTzzynEnAfLHLK88S3cgAxoE0bgR7yo748oHSDakmBkbMaZaQ55ZFZvbrwbV9Q7iXcitP5uuVjrybpdA9n/xA4l84kd3YdpSivIo0XWM8HvketMcUcuJ7tKSEFdxkjAu7POmr/bKmTj9Jqs9fzdV2VB7759NFpsO8s7vjvpBovm50XOqMC92V/RnAusrpa1z7Q8F00roc632bjzBtCdhogIyuI+N0vneqzztSeNi4O6zdGKK+WEd9UKHGJbVpc443X4ny7A8Gt3sTX75Yq83ra50YlTzgauQeQE7uOodXWxYoXlBKHjEDyyM+UD8fVl1Hgd/UIUpFf7K2E8anPmubHev7cuC7afeGvTVY9ChrvOzN7lenfwE=
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -41,10 +43,10 @@ class Ball {
         this.speedX = urgency * 3 - 1.5;
         this.speedY = effort * 3 - 1.5;
         this.color = `rgb(${impact*255}, ${urgency*255}, ${effort*255})`;
-        this.text = new PointText({
-            content: name,
-            justification: 'center'
-        });
+        // this.text = new PointText({
+        //     content: name,
+        //     justification: 'center'
+        // });
     }
 
     draw() {

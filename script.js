@@ -5,17 +5,17 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const initBalls = [
-    'Talk to me':{
+    {'name' : 'freedom',
         impact: 1,
         urgency: 1,
         effort: 1,
         comments: 'aosindaosidnjasoidn'
     },
-    'Talk to her':{
+    {'name' : 'lonelyu',
         impact: 1,
         urgency: 1,
         effort: 1,
-        comments: 'as'
+        comments: 'aosindaosidnjasoidn'
     },
 ]
 

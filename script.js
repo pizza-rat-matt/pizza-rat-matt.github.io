@@ -57,9 +57,18 @@ function populateInitialBalls() {
 let clickX, clickY; // Variables to store click position
 
 canvas.addEventListener('click', (e) => {
-    clickX = e.clientX;
-    clickY = e.clientY;
-    $('#ballForm').modal('show'); // Using jQuery to show the modal
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // Check if any ball is clicked
+    const clickedBall = balls.find(ball => {
+        const distance = Math.sqrt((ball.x - x) ** 2 + (ball.y - y) ** 2);
+        return distance < ball.radius;
+    });
+
+    if (clickedBall) {
+        displayBallInfo(clickedBall);
+    }
 });
 
 

@@ -52,10 +52,10 @@ function populateInitialBalls() {
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
         const impact = Math.random()
-        const ball = new Ball(x, y, impact);
+        const ball = new Ball("Slim Shady", x, y, impact);
 
         // Optional: Set properties like name and effortLevel
-        ball.name = "Slim Shady";
+
         ball.effortLevel = "medium"; // Or randomize this, if you'd like
 
         balls.push(ball);

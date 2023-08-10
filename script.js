@@ -20,15 +20,15 @@ const initBalls = [
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'EC paper',
-        impact: 1,
+        impact: 0.9,
         urgency: 0.5,
-        effort: 0.1,
+        effort: 0.2,
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'Testing',
-        impact: 1,
+        impact: 0.5,
         urgency: 0.5,
-        effort: 0.1,
+        effort: 0.3,
         comments: 'aosindaosidnjasoidn'
     },
 ]
@@ -53,8 +53,12 @@ class Ball {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
-        ctx.fillText(this.name, this.x, this.y);
-        console.log('I drew')
+        var stringTitle = document.getElementById('title').textContent;
+        console.log(stringTitle);
+        ctx.fillStyle = '#fff';
+        ctx.font = '60px sans-serif';
+        ctx.fillText(stringTitle, 15, canvas.height / 2 + 35);
+        console.log('we drew')
         ctx.fill();
     }
 

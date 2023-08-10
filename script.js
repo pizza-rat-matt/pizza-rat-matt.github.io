@@ -7,13 +7,14 @@ canvas.height = window.innerHeight;
 const balls = [];
 
 class Ball {
-    constructor(x, y, impact) {
+    constructor(name, x, y, impact=1, urgency=1, effort=1) {
         this.x = x;
         this.y = y;
         this.size = Math.random() * 30 + 5;
         this.speedX = Math.random() * 3 - 1.5;
         this.speedY = Math.random() * 3 - 1.5;
-        this.color = `rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`;
+        const randy = Math.random()
+        this.color = `rgb(${randy*255}, ${randy*255}, ${(1-randy)*255})`;
     }
 
     draw() {
@@ -41,6 +42,12 @@ class Ball {
 }
 
 function populateInitialBalls() {
+
+
+
+
+
+
     for (let i = 0; i < 5; i++) { // Creates 5 balls. Change the number if needed.
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;

@@ -25,7 +25,7 @@ class Ball {
     constructor(name, x, y, impact=1, urgency=1, effort=1, comments="") {
         this.x = x;
         this.y = y;
-        this.size = impact * 30 + 5;
+        this.size = impact * 60 + 5;
         this.speedX = urgency * 3 - 1.5;
         this.speedY = effort * 3 - 1.5;
         this.color = `rgb(${impact*255}, ${urgency*255}, ${effort*255})`;
@@ -63,19 +63,6 @@ function populateInitialBalls() {
         console.log(ball.name)
         balls.push(bally);
     });
-
-    for (let i = 0; i < 5; i++) { // Creates 5 balls. Change the number if needed.
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
-        const impact = Math.random()
-        const ball = new Ball("Slim Shady", x, y, impact);
-
-        // Optional: Set properties like name and effortLevel
-
-        ball.effortLevel = "medium"; // Or randomize this, if you'd like
-
-        balls.push(ball);
-    }
 
     const x = Math.random() * canvas.width;
     const y = Math.random() * canvas.height;

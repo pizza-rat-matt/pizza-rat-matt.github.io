@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "cssnano": "^6.0.1",
+    "gh-pages": "^5.0.0",
+    "postcss": "^8.4.27"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  }
+}

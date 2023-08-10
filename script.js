@@ -80,7 +80,7 @@ function displayBallInfo(ball) {
 }
 
 function addBall() {
-    const ballName = document.getElementById('ballName').value;
+    const ballName = document.getElementById('ballInfoName').value;
     const effortLevel = document.getElementById('effortLevel').value;
     const impact = Math.rand()
     const ball = new Ball(clickX, clickY, impact);
@@ -92,7 +92,7 @@ function addBall() {
     balls.push(ball);
 
     // Clear the form and hide it
-    document.getElementById('ballName').value = "";
+    document.getElementById('ballInfoName').value = "";
     document.getElementById('ballForm').style.display = 'none';
     
     // Hide the modal

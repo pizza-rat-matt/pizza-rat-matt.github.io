@@ -4,10 +4,25 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+const initBalls = {
+    'Talk to me':{
+        impact: 1,
+        urgency: 1,
+        effort: 1,
+        comments: 'aosindaosidnjasoidn'
+    },
+    'Talk to her':{
+        impact: 1,
+        urgency: 1,
+        effort: 1,
+        comments: 'as'
+    },
+}
+
 const balls = [];
 
 class Ball {
-    constructor(name, x, y, impact=1, urgency=1, effort=1) {
+    constructor(name, x, y, impact=1, urgency=1, effort=1, comments="") {
         this.x = x;
         this.y = y;
         this.size = Math.random() * 30 + 5;
@@ -43,6 +58,10 @@ class Ball {
 
 function populateInitialBalls() {
 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    initBalls.forEach(ball => {
+        const ball = new Ball("Slim Shady", Math.random(), Math.random());
+    });
 
 
 

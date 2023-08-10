@@ -60,8 +60,8 @@ function populateInitialBalls() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     initBalls.forEach(ball => {
-        const bally = new Ball("Slim Shady", Math.random(), Math.random());
-        console.log('yea')
+        const bally = new Ball("Slim Shady", canvas.width/2, canvas.height/2);
+        console.log('start in the middle')
         balls.push(bally);
     });
 

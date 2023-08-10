@@ -55,7 +55,7 @@ class Ball {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
         ctx.fill();
-        ctx.fillStyle = '#fff';
+        ctx.fillStyle = '#000000';
         ctx.font = '60px sans-serif';
         ctx.fillText(this.name, this.x, this.y);
         console.log('who is drew?')

@@ -43,6 +43,7 @@ class Ball {
         this.speedX = urgency * 3 - 1.5;
         this.speedY = effort * 3 - 1.5;
         this.color = `rgb(${impact*255}, ${urgency*255}, ${effort*255})`;
+        this.name = name;
         // this.text = new PointText({
         //     content: name,
         //     justification: 'center'

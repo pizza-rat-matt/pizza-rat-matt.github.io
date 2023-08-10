@@ -40,6 +40,20 @@ class Ball {
     }
 }
 
+function populateInitialBalls() {
+    for (let i = 0; i < 5; i++) { // Creates 5 balls. Change the number if needed.
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const ball = new Ball(x, y);
+
+        // Optional: Set properties like name and effortLevel
+        ball.name = "Ball " + (i + 1);
+        ball.effortLevel = "medium"; // Or randomize this, if you'd like
+
+        balls.push(ball);
+    }
+}
+
 let clickX, clickY; // Variables to store click position
 
 canvas.addEventListener('click', (e) => {
@@ -78,6 +92,7 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+populateInitialBalls();
 animate();
 
 // Handle window resizing

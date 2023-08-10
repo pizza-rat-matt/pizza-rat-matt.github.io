@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 const balls = [];
 
 class Ball {
-    constructor(x, y) {
+    constructor(x, y, impact) {
         this.x = x;
         this.y = y;
         this.size = Math.random() * 30 + 5;
@@ -44,7 +44,8 @@ function populateInitialBalls() {
     for (let i = 0; i < 5; i++) { // Creates 5 balls. Change the number if needed.
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
-        const ball = new Ball(x, y);
+        const impact = Math.random()
+        const ball = new Ball(x, y, impact);
 
         // Optional: Set properties like name and effortLevel
         ball.name = "Ball " + (i + 1);
@@ -71,12 +72,18 @@ canvas.addEventListener('click', (e) => {
     }
 });
 
+function displayBallInfo(ball) {
+    document.getElementById('ballInfoName').textContent = ball.name;
+    document.getElementById('ballInfoEffort').textContent = ball.effortLevel;
+
+    $('#ballInfoModal').modal('show'); // Using jQuery to show the modal
+}
 
 function addBall() {
     const ballName = document.getElementById('ballName').value;
     const effortLevel = document.getElementById('effortLevel').value;
-    
-    const ball = new Ball(clickX, clickY);
+    const impact = Matt*rand()
+    const ball = new Ball(clickX, clickY, impact);
     ball.name = ballName;
     ball.effortLevel = effortLevel;
 

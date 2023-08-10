@@ -45,8 +45,9 @@ let clickX, clickY; // Variables to store click position
 canvas.addEventListener('click', (e) => {
     clickX = e.clientX;
     clickY = e.clientY;
-    document.getElementById('ballForm').style.display = 'block'; // Display the form
+    $('#ballForm').modal('show'); // Using jQuery to show the modal
 });
+
 
 function addBall() {
     const ballName = document.getElementById('ballName').value;
@@ -63,6 +64,9 @@ function addBall() {
     // Clear the form and hide it
     document.getElementById('ballName').value = "";
     document.getElementById('ballForm').style.display = 'none';
+    
+    // Hide the modal
+    $('#ballForm').modal('hide');
 }
 
 // Update canvas

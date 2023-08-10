@@ -64,10 +64,6 @@ function populateInitialBalls() {
     //     balls.push(bally);
     // });
 
-
-
-
-
     for (let i = 0; i < 5; i++) { // Creates 5 balls. Change the number if needed.
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;

@@ -53,7 +53,7 @@ class Ball {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
-        var stringTitle = document.getElementById('title').textContent;
+        var stringTitle = this.name;
         console.log(stringTitle);
         ctx.fillStyle = '#fff';
         ctx.font = '60px sans-serif';

@@ -53,6 +53,19 @@ function populateInitialBalls() {
 
         balls.push(ball);
     }
+
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const impact = Math.random()
+    const ball = new Ball(x, y, impact);
+
+    // Optional: Set properties like name and effortLevel
+    ball.name = "Ball " + (i + 1);
+    ball.effortLevel = "high"; // Or randomize this, if you'd like
+
+    balls.push(ball);
+
+
 }
 
 let clickX, clickY; // Variables to store click position

@@ -82,7 +82,7 @@ function displayBallInfo(ball) {
 function addBall() {
     const ballName = document.getElementById('ballName').value;
     const effortLevel = document.getElementById('effortLevel').value;
-    const impact = Matt*rand()
+    const impact = Math.rand()
     const ball = new Ball(clickX, clickY, impact);
     ball.name = ballName;
     ball.effortLevel = effortLevel;

@@ -7,14 +7,14 @@ canvas.height = window.innerHeight;
 const initBalls = [
     {'name' : 'freedom',
         impact: 1,
-        urgency: 1,
-        effort: 1,
+        urgency: 0.21,
+        effort: 0.21,
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'lonelyu',
         impact: 1,
-        urgency: 1,
-        effort: 1,
+        urgency: 0.5,
+        effort: 0.1,
         comments: 'aosindaosidnjasoidn'
     },
 ]
@@ -25,11 +25,10 @@ class Ball {
     constructor(name, x, y, impact=1, urgency=1, effort=1, comments="") {
         this.x = x;
         this.y = y;
-        this.size = Math.random() * 30 + 5;
-        this.speedX = Math.random() * 3 - 1.5;
-        this.speedY = Math.random() * 3 - 1.5;
-        const randy = Math.random()
-        this.color = `rgb(${randy*255}, ${randy*255}, ${(1-randy)*255})`;
+        this.size = impact * 30 + 5;
+        this.speedX = urgency * 3 - 1.5;
+        this.speedY = effort * 3 - 1.5;
+        this.color = `rgb(${impact*255}, ${urgency*255}, ${effort*255})`;
     }
 
     draw() {

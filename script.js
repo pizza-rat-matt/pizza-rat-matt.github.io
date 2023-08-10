@@ -60,7 +60,8 @@ function populateInitialBalls() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     initBalls.forEach(ball => {
-        const ball = new Ball("Slim Shady", Math.random(), Math.random());
+        const bally = new Ball("Slim Shady", Math.random(), Math.random());
+        balls.push(bally);
     });
 
 

@@ -64,8 +64,8 @@ class Ball {
         this.x = x;
         this.y = y;
         this.size = impact * 60 + 5;
-        this.speedX = urgency * 4;
-        this.speedY = effort * 3 - 1.5;
+        this.speedX = effort * 4;
+        this.speedY = urgency * 4;
         this.color = `rgb(${urgency*255}, ${impact*75}, ${effort*75})`;
         this.name = name;
     }

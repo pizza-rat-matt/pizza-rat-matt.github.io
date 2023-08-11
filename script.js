@@ -56,9 +56,9 @@ class Ball {
         ctx.fillStyle = this.color;
         ctx.fill();
         ctx.fillStyle = '#000000';
-        ctx.font = '60px sans-serif';
-        ctx.fillText(this.name, this.x-this.size, this.y-this.size);
-        console.log('I am the king ')
+        ctx.font = '30px sans-serif';
+        ctx.fillText(this.name, this.x-this.size, this.y+this.size);
+        console.log('chang hi')
 
     }
 

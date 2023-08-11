@@ -7,52 +7,22 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const initBalls = [
-    {'name' : 'Amanda',
+    {'name' : 'Attract/retain talent strategy',
         impact: 1,
-        urgency: 0.5,
+        urgency: 1,
         effort: 1,
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'Walk steps!',
         impact: 1,
         urgency: 1,
-        effort: 0.1,
-        comments: 'aosindaosidnjasoidn'
-    },
-    {'name' : 'EC paper',
-        impact: 0.5,
-        urgency: 0.8,
-        effort: 0.2,
-        comments: 'aosindaosidnjasoidn'
-    },
-    {'name' : 'Testing',
-        impact: 0.1,
-        urgency: 1,
         effort: 1,
         comments: 'aosindaosidnjasoidn'
     },
-    {'name' : 'asd',
-        impact: 1,
-        urgency: 0.1,
-        effort: 0.1,
-        comments: 'aosindaosidnjasoidn'
-    },
-    {'name' : 'ZX',
-        impact: 0.1,
-        urgency: 1,
-        effort: 0.1,
-        comments: 'aosindaosidnjasoidn'
-    },
-    {'name' : 'Plan tonight date night Sophia',
-        impact: 1,
-        urgency: 1,
-        effort: 0.1,
-        comments: 'aosindaosidnjasoidn'
-    },
-    {'name' : 'kjuefufeiuefw',
-        impact: 0.1,
-        urgency: 0.1,
-        effort: 0.11,
+    {'name' : 'EC presentation',
+        impact: 0.9,
+        urgency: 0.9,
+        effort: 1,
         comments: 'aosindaosidnjasoidn'
     },
 ]

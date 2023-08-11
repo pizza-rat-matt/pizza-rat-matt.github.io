@@ -9,13 +9,13 @@ canvas.height = window.innerHeight;
 const initBalls = [
     {'name' : 'Greencard',
         impact: 1,
-        urgency: 0.21,
+        urgency: 1,
         effort: 0.21,
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'Walk steps!',
         impact: 1,
-        urgency: 0.5,
+        urgency: 1,
         effort: 0.1,
         comments: 'aosindaosidnjasoidn'
     },
@@ -44,10 +44,6 @@ class Ball {
         this.speedY = effort * 3 - 1.5;
         this.color = `rgb(${impact*255}, ${urgency*255}, ${effort*255})`;
         this.name = name;
-        // this.text = new PointText({
-        //     content: name,
-        //     justification: 'center'
-        // });
     }
 
     draw() {
@@ -57,7 +53,7 @@ class Ball {
         ctx.fill();
         ctx.fillStyle = '#000000';
         ctx.font = '30px sans-serif';
-        ctx.fillText(this.name, this.x-this.size, this.y+this.size);
+        ctx.fillText(this.name, this.x-this.size, this.y+this.size/2);
         console.log('chang hi')
 
     }

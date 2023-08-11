@@ -60,7 +60,7 @@ const initBalls = [
 const balls = [];
 
 class Ball {
-    constructor(name, x, y, impact=1, urgency=1, effort=1, comments="") {
+    constructor(name, impact=1, urgency=1, effort=1, comments="") {
         this.x = Math.rand*canvas.width;
         this.y = Math.rand*canvas.height;
         this.size = impact * 60 + 5;

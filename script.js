@@ -10,7 +10,7 @@ const initBalls = [
     {'name' : 'Greencard',
         impact: 1,
         urgency: 1,
-        effort: 0.21,
+        effort: 1,
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'Walk steps!',
@@ -20,15 +20,39 @@ const initBalls = [
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'EC paper',
-        impact: 0.9,
-        urgency: 0.5,
-        effort: 0.2,
+        impact: 1,
+        urgency: 0.1,
+        effort: 1,
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'Testing',
-        impact: 0.5,
-        urgency: 0.5,
-        effort: 0.3,
+        impact: 0.1,
+        urgency: 1,
+        effort: 1,
+        comments: 'aosindaosidnjasoidn'
+    },
+    {'name' : 'asd',
+        impact: 1,
+        urgency: 0.1,
+        effort: 0.1,
+        comments: 'aosindaosidnjasoidn'
+    },
+    {'name' : 'ZX',
+        impact: 0.1,
+        urgency: 1,
+        effort: 0.1,
+        comments: 'aosindaosidnjasoidn'
+    },
+    {'name' : 'wefge',
+        impact: 0.1,
+        urgency: 0.1,
+        effort: 1,
+        comments: 'aosindaosidnjasoidn'
+    },
+    {'name' : 'kjuefufeiuefw',
+        impact: 0.1,
+        urgency: 0.1,
+        effort: 0.11,
         comments: 'aosindaosidnjasoidn'
     },
 ]

@@ -78,7 +78,7 @@ class Ball {
         ctx.fillStyle = '#000000';
         ctx.font = '30px sans-serif';
         ctx.fillText(this.name, this.x-this.size, this.y+this.size/2);
-        console.log('chang hi')
+        console.log('colors')
 
     }
 

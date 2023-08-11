@@ -43,10 +43,10 @@ const initBalls = [
         effort: 0.1,
         comments: 'aosindaosidnjasoidn'
     },
-    {'name' : 'wefge',
-        impact: 0.1,
-        urgency: 0.1,
-        effort: 1,
+    {'name' : 'Plan tonight date night Sophia',
+        impact: 1,
+        urgency: 1,
+        effort: 0.1,
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'kjuefufeiuefw',
@@ -64,7 +64,7 @@ class Ball {
         const numy = Math.random();
         this.x = numy*canvas.width;
         this.y = numy*canvas.height;
-        this.size = impact * 60 + 5;
+        this.size = impact * 80 + 5;
         this.speedX = effort * 4;
         this.speedY = urgency * 4;
         this.color = `rgb(${urgency*255}, ${impact*75}, ${effort*75})`;

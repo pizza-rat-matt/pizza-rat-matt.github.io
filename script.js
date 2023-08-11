@@ -61,8 +61,8 @@ const balls = [];
 
 class Ball {
     constructor(name, impact=1, urgency=1, effort=1, comments="") {
-        this.x = Math.rand*canvas.width;
-        this.y = Math.rand*canvas.height;
+        this.x = Math.rand()*canvas.width;
+        this.y = Math.rand()*canvas.height;
         this.size = impact * 60 + 5;
         this.speedX = effort * 4;
         this.speedY = urgency * 4;

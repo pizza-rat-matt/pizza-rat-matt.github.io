@@ -61,13 +61,15 @@ const balls = [];
 
 class Ball {
     constructor(name, impact=1, urgency=1, effort=1, comments="") {
-        this.x = Math.rand()*canvas.width;
-        this.y = Math.rand()*canvas.height;
+        const numy = Math.random();
+        this.x = numy*canvas.width;
+        this.y = numy*canvas.height;
         this.size = impact * 60 + 5;
         this.speedX = effort * 4;
         this.speedY = urgency * 4;
         this.color = `rgb(${urgency*255}, ${impact*75}, ${effort*75})`;
         this.name = name;
+        console.log(this.x);
     }
 
     draw() {
@@ -78,7 +80,7 @@ class Ball {
         ctx.fillStyle = '#000000';
         ctx.font = '30px sans-serif';
         ctx.fillText(this.name, this.x-this.size, this.y+this.size/2);
-        console.log('colors')
+        console.log('asdasda')
 
     }
 
@@ -136,7 +138,7 @@ function displayBallInfo(ball) {
 function addBall() {
     const ballName = document.getElementById('ballInfoName').value;
     const effortLevel = document.getElementById('effortLevel').value;
-    const impact = Math.rand()
+    const impact = Math.random()
     const ball = new Ball(clickX, clickY, impact);
     ball.name = ballName;
     ball.effortLevel = effortLevel;

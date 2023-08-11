@@ -7,9 +7,9 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const initBalls = [
-    {'name' : 'Greencard',
+    {'name' : 'Amanda',
         impact: 1,
-        urgency: 1,
+        urgency: 0.5,
         effort: 1,
         comments: 'aosindaosidnjasoidn'
     },
@@ -20,9 +20,9 @@ const initBalls = [
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'EC paper',
-        impact: 1,
-        urgency: 0.1,
-        effort: 1,
+        impact: 0.5,
+        urgency: 0.8,
+        effort: 0.2,
         comments: 'aosindaosidnjasoidn'
     },
     {'name' : 'Testing',

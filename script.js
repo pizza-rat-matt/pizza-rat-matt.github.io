@@ -61,8 +61,8 @@ const balls = [];
 
 class Ball {
     constructor(name, x, y, impact=1, urgency=1, effort=1, comments="") {
-        this.x = x;
-        this.y = y;
+        this.x = Math.rand*canvas.width;
+        this.y = Math.rand*canvas.height;
         this.size = impact * 60 + 5;
         this.speedX = effort * 4;
         this.speedY = urgency * 4;
@@ -103,7 +103,7 @@ function populateInitialBalls() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     initBalls.forEach(ball => {
-        const bally = new Ball(ball.name, Math.rand()*canvas.width, Math.rand()*canvas.height, ball.impact, ball.urgency, ball.effort, ball.comments);
+        const bally = new Ball(ball.name, impact = ball.impact, urgency=ball.urgency, effort=ball.effort, comments=ball.comments);
         console.log(ball.name)
         balls.push(bally);
     });

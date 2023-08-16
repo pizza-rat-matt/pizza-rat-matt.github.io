@@ -1,86 +1,100 @@
 const data = {
     "name": "Elevate others and myself to experience life",
-    "impact" : 2, "urgency" : 1,
+    "impact" : 2, "urgency" : 0.1, 'levelOfEffort':0,
     "children": [
-      {
-        "name": "Quality explainer", "impact": 0.8,
-      },
-      {
-        "name": "DoD",
-        "impact" : 0.9, "urgency" : 1,
-        "children": [
-          {
-            "name": "Essential meds",
-            "impact" : 0.8, "urgency" : 1,
+        {
+            'name': 'Career',
+            'impact': 1,
+            'urgency': 1,
             "children": [
                 {
-                  "name": "Read Praew's email",
-                  "impact" : 0.6, "urgency" : 1,
+                  "name": "Quality explainer", "impact": 0.8,"urgency": 0.95,'levelOfEffort':1,
                 },
-            ],
-          },
-          {
-            "name": "Mike's request",
-            "impact" : 0.7, "urgency" : 1,
-          }
-        ]
+                {
+                  "name": "DoD",
+                  "impact" : 0.9, "urgency" : 1,'levelOfEffort':0,
+                  "children": [
+                    {
+                      "name": "Essential meds",
+                      "impact" : 0.8, "urgency" : 1,'levelOfEffort':0,
+                      "children": [
+                          {
+                            "name": "Read Praew's email",
+                            "impact" : 0.6, "urgency" : 1,'levelOfEffort':0,
+                          },
+                      ],
+                    },
+                    {
+                      "name": "Mike's request",
+                      "impact" : 0.7, "urgency" : 1,'levelOfEffort':0,
+                    }
+                  ]
+        }
+    ]
       },
       {
         "name": "Downstream data",
-        "impact" : 1, "urgency" : 1,
+        "impact" : 1, "urgency" : 0.8,'levelOfEffort':0,
       },
       {
         "name": "NY Times",
-        "impact" : 1, "urgency" : 1,
+        "impact" : 1, "urgency" : 1,'levelOfEffort':0,
       },
       {
         "name": "Exercise",
-        "impact" : 1, "urgency" : 1,
+        "impact" : 1, "urgency" : 1,'levelOfEffort':0,
       },
 
       {
         "name": "TODO App",
-        "impact" : 1, "urgency" : 1,
+        "impact" : 1, "urgency" : 1,'levelOfEffort':0,
         "children": [
           {
             "name": "Wrap text to prevent hanging chads",
-            "impact" : 0.1, "urgency" : 1,
+            "impact" : 0.1, "urgency" : 1,'levelOfEffort':0,
           },
           {
             "name": "Beautiful UX",
-            "impact" : 0.9, "urgency" : 1,     "children": [
+            "impact" : 0.9, "urgency" : 0,     "children": [
                 {
                   "name": "Format the code through linting",
-                  "impact" : 0.9, "urgency" : 1, 
+                  "impact" : 0.9, "urgency" : 0.5, 'levelOfEffort':0,
                 },
                 {
+                    "name": "Fix the legend (or just hide for now)",
+                    "impact" : 0.9, "urgency" : 0, 'levelOfEffort':0,
+                  },
+                {
                     "name": "Learn about D3 ball bouncing",
-                    "impact" : 0.9, "urgency" : 1, 
+                    "impact" : 0.9, "urgency" : 0, 'levelOfEffort':0,
                   },
                   {
-                    "name": "Color balls based on urgency",
-                    "impact" : 0.9, "urgency" : 1, 
+                    "name": "Use level of effort to make the balls fuzzy. Lots of tech debt",
+                    "impact" : 1, "urgency" : 0.2,'levelOfEffort':0,
                   },
             ]
           },
           {
             "name": "Favicon",
-            "impact" : 0.2, "urgency" : 1,
+            "impact" : 0.2, "urgency" : 0.1,'levelOfEffort':0,
           },
           {
             "name": "Crops at bottom",
-            "impact" : 1, "urgency" : 1,
+            "impact" : 1, "urgency" : 0.9,'levelOfEffort':0,
           },
           {
             "name": "Extends at top",
-            "impact" : 1, "urgency" : 1,
+            "impact" : 1, "urgency" : 0.8,'levelOfEffort':0,
           },
+
         ]
       },
     ]
   };
 
-  const svg = d3.select("svg");
+  const svg = d3.select("body").append("svg")
+  .attr("width", window.innerWidth)   // take up full window width
+  .attr("height", window.innerHeight); // take up full window height
   const width = +svg.attr("width");
   const height = +svg.attr("height");
 
@@ -89,9 +103,9 @@ const data = {
   const nodes = root.descendants();
   
   const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(100))
-      .force("charge", d3.forceManyBody().strength(-500))
-      .force("center", d3.forceCenter(width / 2, height / 2))
+      .force("link", d3.forceLink(links).id(d => d.id).distance(200))
+      .force("charge", d3.forceManyBody().strength(-300))
+      .force("center", d3.forceCenter(width / 2, height/2))
       .on("tick", ticked);
   
   const drag = d3.drag()
@@ -99,22 +113,45 @@ const data = {
       .on("drag", dragged)
       .on("end", dragended);
   
-  const link = svg.append("g")
-      .selectAll("line")
+const link = svg.selectAll(".link")
       .data(links)
       .enter().append("line")
-      .attr("stroke", "#aaa");
+      .attr("class", "link")
+      .attr("stroke", linkStrokeColor)
+      .attr("stroke-dasharray", linkStrokeStyle)
+      .attr("stroke-width", 2);
+  
+
+
+const urgencyColor = d3.scaleSequential(d3.interpolateRdYlGn)
+      .domain([1, 0]);  // 100% is high urgency (red), 0% is low urgency (green)
+
   
   const node = svg.append("g")
       .selectAll("circle")
       .data(nodes)
       .enter().append("circle")
       .attr("r", d => d.data.impact*40)
-      .attr("fill", "steelblue")
+      .attr("fill", d => urgencyColor(d.data.urgency))
       .on("mouseover", function () {
         d3.select(this).attr("fill", "orange");
         })
       .call(drag);
+
+      const legend = svg.selectAll(".legend")
+      .data(urgencyColor.domain())
+      .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", (d, i) => `translate(0,${i * 20})`);
+  
+  legend.append("circle")
+      .attr("r", 8)
+      .attr("fill", urgencyColor);
+  
+  legend.append("text")
+      .attr("x", 24)
+      .attr("dy", "0.35em")
+      .text(d => d);
       
 // label.call(wrap, 80); // You can adjust '80' for desired wrapping width
 const labelGroups = svg.append("g")
@@ -146,6 +183,17 @@ const labelText = labelGroups.append("text")
             .attr("width", bbox.width + 4)
             .attr("height", bbox.height + 4);
     });
+
+    function linkStrokeColor(d) {
+        console.log("Source levelOfEffort:", d.source.levelOfEffort);
+        console.log("Target levelOfEffort:", d.target.levelOfEffort);
+        return d.source.levelOfEffort > 0.8 || d.target.levelOfEffort > 0.8 ? "grey" : "#000000";
+    }
+    
+    function linkStrokeStyle(d) {
+        return d.source.levelOfEffort > 0.8 || d.target.levelOfEffort > 0.8 ? "2,2" : ""; // 2,2 creates a dashed pattern
+    }
+
   function ticked() {
       link
           .attr("x1", d => d.source.x)

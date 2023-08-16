@@ -144,7 +144,7 @@ const data = {
     ]
 };
 
-const svg = d3.select("canvas");
+const svg = d3.select("svg");
 console.log(svg)
 const width = +svg.attr("width");
 const height = +svg.attr("height");

@@ -137,10 +137,10 @@
 
 // Sample data structure. You can modify this accordingly.
 const data = {
-    name: "Parent",
+    name: "DoD Analysis",
     children: [
-        { name: "Child 1" },
-        { name: "Child 2", children: [{ name: "Grandchild 1" }, { name: "Grandchild 2" }] }
+        { name: "PPT prep" },
+        { name: "Essential Meds mapping", children: [{ name: "Confirm with Andrew" }, { name: "Review branch" }] }
     ]
 };
 

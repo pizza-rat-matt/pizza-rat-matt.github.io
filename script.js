@@ -137,12 +137,43 @@
 
 // Sample data structure. You can modify this accordingly.
 const data = {
-    name: "DoD Analysis",
-    children: [
-        { name: "PPT prep" },
-        { name: "Essential Meds mapping", children: [{ name: "Confirm with Andrew" }, { name: "Review branch" }] }
+    "name": "Elevate others and myself to experience life",
+    "children": [
+      {
+        "name": "Quality explainer"
+      },
+      {
+        "name": "DoD",
+        "children": [
+          {
+            "name": "Essential meds",
+            "children": [
+                {
+                  "name": "Read Praew's email",
+                },
+            ],
+          },
+          {
+            "name": "Mike's request"
+          }
+        ]
+      },
+      {
+        "name": "Downstream data"
+      },
+      {
+        "name": "TODO List",
+        "children": [
+          {
+            "name": "Balls should bounce"
+          }
+        ]
+      },
+      {
+        "name": "NY Times"
+      }
     ]
-};
+  };
 
 const svg = d3.select("svg");
 console.log(svg)

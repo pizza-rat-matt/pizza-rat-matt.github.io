@@ -1,228 +1,206 @@
-// const canvas = document.getElementById('canvas');
-// const ctx = canvas.getContext('2d');
-
-// // TODO: http://sketch.paperjs.org/#V/0.12.7/S/rVhfb9s2EP8qnIHVUmzLdtMOhT1ngDvsacUCZOhL6gdaom0msiRQlBOv8HffkRRlUqTiLJ2AIPLx7nh/fnc86nsvw3vSm/XuHgmPd71hL84T8XtTZTGneYaWOE0DNkTFEB2GSHCH6Ps39i1D8PAdLSOGE1qVaIHY3KIXOc04kAubfCAxzxnQDzZ9j5+/khjo04/2Qlbt78h2T6SyL5jvok2a5yxgaIyu0QC9D23+dV5lyV+bTUmEwP2qc3VZbTYejpIm5FbYXp4X9d/ZObADljPyhG7hNWhCIp4NTdPPeZqzGbLo4tlVZKa8YDhL8n0Qoit0/ctk2GYsMa8YFjmYoamzumZ0u+MZKUtYNRdPFus6JVnyBVI6Q/1USBDW1+uncG66NR6jz4xgThBGnDxzRDnZI56jhJZFio/gN5H5j6xASNY6ECJof8NvOxpxnnFI3kwKW9Y9VCWnGxrXXvZjYPMbqEkbQE5wwAxR2HMyh3+/tkECxMEgtAPfznxUVOUuMNB7hlAXUF4jIkAR4SQJmmgEoYftDDCl9MztoAVn2xRyB/gAsLer4QpRBxeQ7y3ftTFhWHESLycdU1HdUcFynvNjQSCmjQWQfUAf7K07QeCLabwj8eMyZwlhZWC7SjcoMAo+UpahG7PaQ7c+PCILU8Ta4+SmQDadwcLU42agKhLw7W6HC2JYrUpH/zJd646CwGJJ/xGhO1DyFIl3fxikZdEzAHZkoqgjApp7IbVHTzSBQAzMhtsdCGfLm04ll7cfvWXL43/y8qi93BHRot7o5lG76dNy2YDLftrwMCB0AR2qWksNY9kkNNHa6Y3NTTxa3z1dNeeuFN0SfqfbTUBD1zN/Eyv3eQ6nWvh/2dfkyuiqYKtWUI8QY/TBI9tY1pJdtGXnbclTmyCMz9SBFVBAyDREPzsu+IQKRg5K6AZNQvQb+D5CUzRzejJQvQpyPY94PHEEamboYuaBA7rVQgjOGkOSR8qNtfB6pWvCXBCerYTG95b+a0e971A00uAkR+l6GXAwc9ymOCZytpCTBObyXU0CoEP+kpB0gCr4AewllXOqWV2a2NHZYcqJuVG0a0/VwtDTZEs1Caik34GIs5gEa0VzDzwpZoN6gNb69d07pfenhQCRA3SJkwNhKS5a4DZ0jKQKL8YSyuQAbXRFYNe2RlnO9jiFDhnoTa7QJJpMP4b+XNeDOuBJKnaY1ppjZHJ4VcU4jZcCICUE26PIWBf8HQapllvz+dS8wNDRxSGpyzNwL2JC3hfs6M7bXHJkE1kQ7JH6BZ3m00T0GhjkLAFGYMjP3AoyrjlKw1jOgFfuJKtmpHDVgfVzZF9w7gcau5DixWtOG829/pOIal1HduwDXvj5eSK0F5frTzzynEnAfLHLK88S3cgAxoE0bgR7yo748oHSDakmBkbMaZaQ55ZFZvbrwbV9Q7iXcitP5uuVjrybpdA9n/xA4l84kd3YdpSivIo0XWM8HvketMcUcuJ7tKSEFdxkjAu7POmr/bKmTj9Jqs9fzdV2VB7759NFpsO8s7vjvpBovm50XOqMC92V/RnAusrpa1z7Q8F00roc632bjzBtCdhogIyuI+N0vneqzztSeNi4O6zdGKK+WEd9UKHGJbVpc443X4ny7A8Gt3sTX75Yq83ra50YlTzgauQeQE7uOodXWxYoXlBKHjEDyyM+UD8fVl1Hgd/UIUpFf7K2E8anPmubHev7cuC7afeGvTVY9ChrvOzN7lenfwE=
-
-// canvas.width = window.innerWidth;
-// canvas.height = window.innerHeight;
-
-// const initBalls = [
-//     {'name' : 'Attract/retain talent strategy',
-//         impact: 1,
-//         urgency: 1,
-//         effort: 1,
-//         comments: 'aosindaosidnjasoidn'
-//     },
-//     {'name' : 'Walk steps!',
-//         impact: 1,
-//         urgency: 1,
-//         effort: 1,
-//         comments: 'aosindaosidnjasoidn'
-//     },
-//     {'name' : 'EC presentation',
-//         impact: 0.9,
-//         urgency: 0.9,
-//         effort: 1,
-//         comments: 'aosindaosidnjasoidn'
-//     },
-// ]
-
-// const balls = [];
-
-// class Ball {
-//     constructor(name, impact=1, urgency=1, effort=1, comments="") {
-//         const numy = Math.random();
-//         this.x = numy*canvas.width;
-//         this.y = numy*canvas.height;
-//         this.size = impact * 80 + 5;
-//         this.speedX = effort * 4;
-//         this.speedY = urgency * 4;
-//         this.color = `rgb(${urgency*255}, ${impact*75}, ${effort*75})`;
-//         this.name = name;
-//     }
-
-//     draw() {
-//         ctx.beginPath();
-//         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-//         ctx.fillStyle = this.color;
-//         ctx.fill();
-//         ctx.fillStyle = '#000000';
-//         ctx.font = '30px sans-serif';
-//         ctx.fillText(this.name, this.x-this.size, this.y+this.size/2);
-
-//     }
-
-//     update() {
-//         this.x += this.speedX;
-//         this.y += this.speedY;
-
-//         // Ball collision with walls
-//         if (this.size + this.x > canvas.width || this.x - this.size < 0) {
-//             this.speedX = -this.speedX;
-//         }
-
-//         if (this.size + this.y > canvas.height || this.y - this.size < 0) {
-//             this.speedY = -this.speedY;
-//         }
-
-//         this.draw();
-//     }
-// }
-
-// function populateInitialBalls() {
-
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-//     initBalls.forEach(ball => {
-//         const bally = new Ball(ball.name, impact = ball.impact, urgency=ball.urgency, effort=ball.effort, comments=ball.comments);
-//         console.log(ball.name)
-//         balls.push(bally);
-//     });
-// }
-
-// let clickX, clickY; // Variables to store click position
-
-// canvas.addEventListener('click', (e) => {
-//     const x = e.clientX;
-//     const y = e.clientY;
-
-//     // Check if any ball is clicked
-//     const clickedBall = balls.find(ball => {
-//         const distance = Math.sqrt((ball.x - x) ** 2 + (ball.y - y) ** 2);
-//         return distance < ball.radius;
-//     });
-
-//     if (clickedBall) {
-//         displayBallInfo(clickedBall);
-//     }
-// });
-
-// function displayBallInfo(ball) {
-//     document.getElementById('ballInfoName').textContent = ball.name;
-//     document.getElementById('ballInfoEffort').textContent = ball.effortLevel;
-
-//     $('#ballInfoModal').modal('show'); // Using jQuery to show the modal
-// }
-
-// function addBall() {
-//     const ballName = document.getElementById('ballInfoName').value;
-//     const effortLevel = document.getElementById('effortLevel').value;
-//     const impact = Math.random()
-//     const ball = new Ball(clickX, clickY, impact);
-//     ball.name = ballName;
-//     ball.effortLevel = effortLevel;
-
-//     // You can add logic here to change the ball's behavior based on the "effortLevel" if desired
-
-//     balls.push(ball);
-
-//     // Clear the form and hide it
-//     document.getElementById('ballInfoName').value = "";
-//     document.getElementById('ballForm').style.display = 'none';
-    
-//     // Hide the modal
-//     $('#ballForm').modal('hide');
-// }
-
-// // Update canvas
-// function animate() {
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-//     balls.forEach(ball => {
-//         ball.update();
-//     });
-//     requestAnimationFrame(animate);
-// }
-
-// populateInitialBalls();
-// animate();
-
-// Sample data structure. You can modify this accordingly.
 const data = {
     "name": "Elevate others and myself to experience life",
+    "impact" : 2, "urgency" : 1,
     "children": [
       {
-        "name": "Quality explainer"
+        "name": "Quality explainer", "impact": 0.8,
       },
       {
         "name": "DoD",
+        "impact" : 0.9, "urgency" : 1,
         "children": [
           {
             "name": "Essential meds",
+            "impact" : 0.8, "urgency" : 1,
             "children": [
                 {
                   "name": "Read Praew's email",
+                  "impact" : 0.6, "urgency" : 1,
                 },
             ],
           },
           {
-            "name": "Mike's request"
+            "name": "Mike's request",
+            "impact" : 0.7, "urgency" : 1,
           }
         ]
       },
       {
-        "name": "Downstream data"
+        "name": "Downstream data",
+        "impact" : 1, "urgency" : 1,
       },
       {
-        "name": "TODO List",
+        "name": "NY Times",
+        "impact" : 1, "urgency" : 1,
+      },
+      {
+        "name": "Exercise",
+        "impact" : 1, "urgency" : 1,
+      },
+
+      {
+        "name": "TODO App",
+        "impact" : 1, "urgency" : 1,
         "children": [
           {
-            "name": "Balls should bounce"
-          }
+            "name": "Wrap text to prevent hanging chads",
+            "impact" : 0.1, "urgency" : 1,
+          },
+          {
+            "name": "Beautiful UX",
+            "impact" : 0.9, "urgency" : 1,     "children": [
+                {
+                  "name": "Format the code through linting",
+                  "impact" : 0.9, "urgency" : 1, 
+                },
+                {
+                    "name": "Learn about D3 ball bouncing",
+                    "impact" : 0.9, "urgency" : 1, 
+                  },
+                  {
+                    "name": "Color balls based on urgency",
+                    "impact" : 0.9, "urgency" : 1, 
+                  },
+            ]
+          },
+          {
+            "name": "Favicon",
+            "impact" : 0.2, "urgency" : 1,
+          },
+          {
+            "name": "Crops at bottom",
+            "impact" : 1, "urgency" : 1,
+          },
+          {
+            "name": "Extends at top",
+            "impact" : 1, "urgency" : 1,
+          },
         ]
       },
-      {
-        "name": "NY Times"
-      }
     ]
   };
 
-const svg = d3.select("svg");
-console.log(svg)
-const width = +svg.attr("width");
-const height = +svg.attr("height");
+  const svg = d3.select("svg");
+  const width = +svg.attr("width");
+  const height = +svg.attr("height");
 
-const treeLayout = d3.tree().size([width, height]);
-const root = d3.hierarchy(data);
-treeLayout(root);
-
-const nodes = svg.selectAll(".node")
-    .data(root.descendants())
-    .enter()
-    .append("circle")
-    .attr("class", "node")
-    .attr("r", 20)
-    .attr("cx", d => d.x)
-    .attr("cy", d => d.y)
-    .attr("fill", "steelblue")
-    .on("mouseover", function () {
+  const root = d3.hierarchy(data);
+  const links = root.links();
+  const nodes = root.descendants();
+  
+  const simulation = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).id(d => d.id).distance(100))
+      .force("charge", d3.forceManyBody().strength(-500))
+      .force("center", d3.forceCenter(width / 2, height / 2))
+      .on("tick", ticked);
+  
+  const drag = d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended);
+  
+  const link = svg.append("g")
+      .selectAll("line")
+      .data(links)
+      .enter().append("line")
+      .attr("stroke", "#aaa");
+  
+  const node = svg.append("g")
+      .selectAll("circle")
+      .data(nodes)
+      .enter().append("circle")
+      .attr("r", d => d.data.impact*40)
+      .attr("fill", "steelblue")
+      .on("mouseover", function () {
         d3.select(this).attr("fill", "orange");
-    })
-    .on("mouseout", function () {
-        d3.select(this).attr("fill", "steelblue");
-    });
+        })
+      .call(drag);
+      
+// label.call(wrap, 80); // You can adjust '80' for desired wrapping width
+const labelGroups = svg.append("g")
+    .selectAll(".labelGroup")
+    .data(nodes)
+    .enter().append("g")
+    .call(drag);
 
-const links = svg.selectAll(".link")
-    .data(root.links())
-    .enter()
-    .append("line")
-    .attr("class", "link")
-    .attr("stroke", "black")
-    .attr("x1", d => d.source.x)
-    .attr("y1", d => d.source.y)
-    .attr("x2", d => d.target.x)
-    .attr("y2", d => d.target.y);
+// Inside these groups, append rectangles for background
+const labelBackground = labelGroups.append("rect")
+    .attr("fill", "white")  // White background
+    .attr("opacity", 0.7)   // Adjust opacity as needed
+    .attr("rx", 5)          // Rounded corners
+    .attr("ry", 5);
 
-const labels = svg.selectAll(".label")
-    .data(root.descendants())
-    .enter()
-    .append("text")
-    .attr("class", "label")
-    .attr("x", d => d.x)
-    .attr("y", d => d.y - 25)
+// Inside these groups, also append texts for labels
+const labelText = labelGroups.append("text")
+    .attr("dy", ".35em")
     .attr("text-anchor", "middle")
-    .text(d => d.data.name);
+    .attr("opacity", d => d.data.impact)
+    .text(d => d.data.name)
+    .call(wrap, 150)
+    .each(function(d) {
+        const bbox = this.getBBox();
+        d.bbox = bbox;
+        d3.select(this.previousSibling)  // selects the rectangle (it's before the text in the DOM)
+            .attr("x", bbox.x - 2)
+            .attr("y", bbox.y - 2)
+            .attr("width", bbox.width + 4)
+            .attr("height", bbox.height + 4);
+    });
+  function ticked() {
+      link
+          .attr("x1", d => d.source.x)
+          .attr("y1", d => d.source.y)
+          .attr("x2", d => d.target.x)
+          .attr("y2", d => d.target.y);
+  
+      node
+          .attr("cx", d => d.x)
+          .attr("cy", d => d.y);
 
-// Handle window resizing
-// window.addEventListener('resize', () => {
-//     canvas.width = window.innerWidth;
-//     canvas.height = window.innerHeight;
-// });
+        labelGroups
+        .attr("transform", d => `translate(${d.x}, ${d.y})`);
+  }
+  
+  function dragstarted(d) {
+      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+  }
+  
+  function dragged(d) {
+      d.fx = d3.event.x;
+      d.fy = d3.event.y;
+  }
+  
+  function dragended(d) {
+      if (!d3.event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+  }
+
+  function wrap(text, width) {
+    text.each(function() {
+        const text = d3.select(this),
+            words = text.text().split(/\s+/).reverse(),
+            lineHeight = 1.1,
+            y = text.attr("y")
+            dy = parseFloat(text.attr("dy"));
+
+        let word,
+            line = [],
+            lineNumber = 0,
+            tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", `${dy}em`);
+
+        while (word = words.pop()) {
+            line.push(word);
+            tspan.text(line.join(" "));
+            if (tspan.node().getComputedTextLength() > width) {
+                line.pop();
+                tspan.text(line.join(" "));
+                line = [word];
+                tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", `${++lineNumber * lineHeight + dy}em`).text(word);
+                lineNumber -= 1;
+            }
+        }
+    });
+}

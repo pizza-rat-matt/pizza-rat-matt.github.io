@@ -14,7 +14,7 @@ const data = {
       importance: 1,
       stress: 0.5,
       levelOfEffort: 0,
-    },
+    },],
     },
     {
       name: "Get divorced",

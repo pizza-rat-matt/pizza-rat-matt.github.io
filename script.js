@@ -369,8 +369,9 @@ const simulation = d3
     d3
       .forceLink(links)
       .id((d) => d.id)
-      .distance(100)
+      .distance((width+height)/20)
   )
+  // .attr("r", (d) => d.data.importance*(width+height)/100)
   .force("charge", d3.forceManyBody().strength(-150))
   .force("center", d3.forceCenter(width / 2, height / 2))
   .force(

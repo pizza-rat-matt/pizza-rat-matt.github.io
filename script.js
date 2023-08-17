@@ -1,5 +1,5 @@
 const data = {
-  name: "Elevate others and myself to experience life",
+  name: "Elevate myself and others to experience happiness, love, and passion",
   importance: 2,
   stress: 0.1,
   levelOfEffort: 0,
@@ -22,6 +22,12 @@ const data = {
       stress: 0,
       levelOfEffort: 0,
       children: [
+        {
+          name: "Disney planning",
+          importance: 0.4,
+          stress: 0,
+          levelOfEffort: 0,
+        },
         {
           name: "Boston planning",
           importance: 0.8,
@@ -335,6 +341,12 @@ const data = {
               name: "Use level of effort to make the balls fuzzy. Lots of tech debt",
               importance: 1,
               stress: 0.2,
+              levelOfEffort: 0,
+            },
+            {
+              name: "Support mobile better",
+              importance: 0.3,
+              stress: 0.1,
               levelOfEffort: 0,
             },
           ],

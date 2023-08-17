@@ -156,7 +156,12 @@ const data = {
             name: "UX/UI assessment",
             importance: 1,
             stress: 0.8,
-            levelOfEffort: 0,
+            levelOfEffort: 0,children: [            {
+              name: "Talk to Rich",
+              importance: 1,
+              stress: 0.8,
+              levelOfEffort: 0,
+            },],
           },],
         },
         {

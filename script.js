@@ -11,6 +11,12 @@ const data = {
       levelOfEffort: 0,
     },
     {
+      name: "Get divorced",
+      importance: 1,
+      stress: 0,
+      levelOfEffort: 0,
+    },
+    {
       name: "Little monkey and baby racoon",
       importance: 1,
       stress: 0,
@@ -264,13 +270,19 @@ const data = {
     {
       name: "Health",
       importance: 1,
-      stress: 0,
+      stress: 0.3,
       levelOfEffort: 0,
       children: [
         {
           name: "Walk your steps!",
           importance: 0.5,
           stress: 0,
+          levelOfEffort: 0,
+        },
+        {
+          name: "Sleep",
+          importance: 0.9,
+          stress: 0.7,
           levelOfEffort: 0,
         },
         {

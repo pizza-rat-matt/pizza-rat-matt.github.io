@@ -76,11 +76,17 @@ const data = {
           levelOfEffort: 0,
         },
         {
-          name: "Great People Management",
+          name: "Leadership",
           importance: 0.9,
           stress: 0.6,
           levelOfEffort: 0,
           children: [
+            {
+              name: "Amanda thing",
+              importance: 0.9,
+              stress: 0.7,
+              levelOfEffort: 0,
+            },
             {
               name: "Erwina",
               importance: 1,
@@ -152,17 +158,22 @@ const data = {
           importance: 0.5,
           stress: 1,
           levelOfEffort: 0,
-          children: [            {
-            name: "UX/UI assessment",
-            importance: 1,
-            stress: 0.8,
-            levelOfEffort: 0,children: [            {
-              name: "Talk to Rich",
+          children: [
+            {
+              name: "UX/UI assessment",
               importance: 1,
               stress: 0.8,
               levelOfEffort: 0,
-            },],
-          },],
+              children: [
+                {
+                  name: "Talk to Rich",
+                  importance: 1,
+                  stress: 0.8,
+                  levelOfEffort: 0,
+                },
+              ],
+            },
+          ],
         },
         {
           name: "Infrastructure workplan",
@@ -181,8 +192,9 @@ const data = {
               importance: 0.4,
               stress: 0.6,
               levelOfEffort: 0,
-            },]
-          },
+            },
+          ],
+        },
         {
           name: "Media insights",
           importance: 0.7,
@@ -200,17 +212,20 @@ const data = {
               importance: 0.8,
               stress: 0.95,
               levelOfEffort: 1,
-              children: [        {
-                name: "Final read through",
-                importance: 1,
-                stress: 1,
-                levelOfEffort: 0,
-              },        {
-                name: "Inspection data addition",
-                importance: 1,
-                stress: 1,
-                levelOfEffort: 0,
-              },],
+              children: [
+                {
+                  name: "Final read through",
+                  importance: 1,
+                  stress: 1,
+                  levelOfEffort: 0,
+                },
+                {
+                  name: "Inspection data addition",
+                  importance: 1,
+                  stress: 1,
+                  levelOfEffort: 0,
+                },
+              ],
             },
           ],
         },
@@ -348,7 +363,6 @@ const data = {
           stress: 0.1,
           levelOfEffort: 0,
         },
-
       ],
     },
   ],
@@ -360,7 +374,7 @@ const height = svgContainer.node().getBoundingClientRect().height;
 
 const svg = svgContainer
   .attr("viewBox", [0, 0, width, height])
-   .attr("preserveAspectRatio", "xMidYMid meet");
+  .attr("preserveAspectRatio", "xMidYMid meet");
 
 const root = d3.hierarchy(data);
 const links = root.links();
@@ -373,9 +387,9 @@ const simulation = d3
     d3
       .forceLink(links)
       .id((d) => d.id)
-      .distance(150)
+      .distance(100)
   )
-  .force("charge", d3.forceManyBody().strength(-200))
+  .force("charge", d3.forceManyBody().strength(-150))
   .force("center", d3.forceCenter(width / 2, height / 2))
   .force(
     "collision",
@@ -399,7 +413,7 @@ const link = svg
   .attr("class", "link")
   .attr("stroke", linkStrokeColor)
   .attr("stroke-dasharray", linkStrokeStyle)
-  .attr("stroke-width", 2);
+  .attr("stroke-width", 1);
 
 const stressColor = d3.scaleSequential(d3.interpolateRdYlGn).domain([1, 0]); // 100% is high stress (red), 0% is low stress (green)
 
@@ -409,7 +423,7 @@ const node = svg
   .data(nodes)
   .enter()
   .append("circle")
-  .attr("r", (d) => d.data.importance * 40)
+  .attr("r", (d) => d.data.importance*width/60)
   .attr("fill", (d) => stressColor(d.data.stress))
   .on("mouseover", function () {
     d3.select(this).attr("fill", "orange");
@@ -547,11 +561,10 @@ function wrap(text, width) {
     }
   });
 
-  window.addEventListener("resize", function() {
+  window.addEventListener("resize", function () {
     const newWidth = window.innerWidth;
     const newHeight = window.innerHeight;
 
-    svg.attr("width", newWidth)
-       .attr("height", newHeight);
-});
+    svg.attr("width", newWidth).attr("height", newHeight);
+  });
 }

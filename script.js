@@ -306,6 +306,12 @@ const data = {
           levelOfEffort: 0,
         },
         {
+          name: "Weight 175 by September 15th",
+          importance: 0.9,
+          stress: 0.7,
+          levelOfEffort: 0,
+        },
+        {
           name: "Blood pressure under control",
           importance: 0.5,
           stress: 1,
@@ -423,10 +429,10 @@ const node = svg
   .data(nodes)
   .enter()
   .append("circle")
-  .attr("r", (d) => d.data.importance*width/60)
+  .attr("r", (d) => d.data.importance*(width+height)/100)
   .attr("fill", (d) => stressColor(d.data.stress))
   .on("mouseover", function () {
-    d3.select(this).attr("fill", "orange");
+    d3.select(this).attr("fill", "black");
   })
   .on("mouseout", function () {
     d3.select(this).attr("fill", (d) => stressColor(d.data.stress));
@@ -462,7 +468,7 @@ const labelGroups = svg
 const labelBackground = labelGroups
   .append("rect")
   .attr("fill", "white") // White background
-  .attr("opacity", 0.7) // Adjust opacity as needed
+  .attr("opacity", 0.7)
   .attr("rx", 5) // Rounded corners
   .attr("ry", 5);
 
@@ -472,6 +478,12 @@ const labelText = labelGroups
   .attr("dy", ".35em")
   .attr("text-anchor", "middle")
   .attr("opacity", (d) => d.data.importance)
+  .on("mouseover", function () {
+    d3.select(this).attr("opacity", 1);
+  })
+  .on("mouseout", function () {
+    d3.select(this).attr("opacity", (d) => d.data.importance);
+  })
   .text((d) => d.data.name)
   .call(wrap, 150)
   .each(function (d) {

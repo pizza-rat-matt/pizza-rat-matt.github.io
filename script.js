@@ -372,7 +372,7 @@ const simulation = d3
       .distance((width+height)/20)
   )
   // .attr("r", (d) => d.data.importance*(width+height)/100)
-  .force("charge", d3.forceManyBody().strength(-150))
+  .force("charge", d3.forceManyBody().strength(-550000/(width+height)))
   .force("center", d3.forceCenter(width / 2, height / 2))
   .force(
     "collision",

@@ -332,32 +332,8 @@ const data = {
           stress: 0,
           children: [
             {
-              name: "Fix the legend (or just hide for now)",
-              importance: 0.9,
-              stress: 0,
-              levelOfEffort: 0,
-            },
-            {
-              name: "Learn about D3 ball bouncing",
-              importance: 0.9,
-              stress: 0,
-              levelOfEffort: 0,
-            },
-            {
               name: "Use level of effort to make the balls fuzzy. Lots of tech debt",
               importance: 1,
-              stress: 0.2,
-              levelOfEffort: 0,
-            },
-            {
-              name: "Crops at bottom",
-              importance: 0.5,
-              stress: 0.2,
-              levelOfEffort: 0,
-            },
-            {
-              name: "Extends at top",
-              importance: 0.5,
               stress: 0.2,
               levelOfEffort: 0,
             },
@@ -439,22 +415,6 @@ const node = svg
   })
   .call(drag);
 
-const legend = svg
-  .selectAll(".legend")
-  .data(stressColor.domain())
-  .enter()
-  .append("g")
-  .attr("class", "legend")
-  .attr("transform", (d, i) => `translate(0,${i * 20})`);
-
-legend.append("circle").attr("r", 8).attr("fill", stressColor);
-
-legend
-  .append("text")
-  .attr("x", 24)
-  .attr("dy", "0.35em")
-  .text((d) => d);
-
 // label.call(wrap, 80); // You can adjust '80' for desired wrapping width
 const labelGroups = svg
   .append("g")
@@ -515,7 +475,9 @@ function ticked() {
     .attr("x2", (d) => d.target.x)
     .attr("y2", (d) => d.target.y);
 
-  node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+  node
+    .attr("cx", (d) => d.x = Math.max(1, Math.min(d.x, width*0.95)))
+    .attr("cy", (d) => d.y = Math.max(1, Math.min(d.y, height*0.95)));
 
   labelGroups.attr("transform", (d) => `translate(${d.x}, ${d.y})`);
 }

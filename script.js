@@ -8,7 +8,13 @@ const data = {
       name: "Home maintenance",
       importance: 1,
       stress: 0,
+      levelOfEffort: 0,children: [
+    {
+      name: "install fans",
+      importance: 1,
+      stress: 0.5,
       levelOfEffort: 0,
+    },
     },
     {
       name: "Get divorced",

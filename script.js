@@ -70,6 +70,42 @@ const data = {
           levelOfEffort: 0,
         },
         {
+          name: "Great People Management",
+          importance: 0.9,
+          stress: 0.6,
+          levelOfEffort: 0,
+          children: [
+            {
+              name: "Erwina",
+              importance: 1,
+              stress: 0.8,
+              levelOfEffort: 0,
+              children: [
+                {
+                  name: "Wejdan",
+                  importance: 0.8,
+                  stress: 1,
+                  levelOfEffort: 0,
+                  children: [
+                    {
+                      name: "Shreyash",
+                      importance: 0.6,
+                      stress: 1,
+                      levelOfEffort: 0,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              name: "Establish a baseline",
+              importance: 1,
+              stress: 0.8,
+              levelOfEffort: 0,
+            },
+          ],
+        },
+        {
           name: "Shortage Model",
           importance: 0.7,
           stress: 1,
@@ -301,20 +337,17 @@ const data = {
   ],
 };
 
-const svg = d3
-  .select("body")
-  .append("svg")
-  .attr("width", window.innerWidth) // take up full window width
-  .attr("height", window.innerHeight); // take up full window height
-const width = +svg.attr("width");
-const height = +svg.attr("height");
+const svgContainer = d3.select("#ballPit");
+const width = svgContainer.node().getBoundingClientRect().width;
+const height = svgContainer.node().getBoundingClientRect().height;
+
+const svg = svgContainer
+  .attr("viewBox", [0, 0, width, height])
+   .attr("preserveAspectRatio", "xMidYMid meet");
 
 const root = d3.hierarchy(data);
 const links = root.links();
 const nodes = root.descendants();
-
-const numNodes = nodes.length;
-const chargeStrength = -Math.min(200, 300 / numNodes); // This is just an example formula.
 
 const simulation = d3
   .forceSimulation(nodes)
@@ -421,8 +454,6 @@ const labelText = labelGroups
   });
 
 function linkStrokeColor(d) {
-  console.log("Source levelOfEffort:", d.source.levelOfEffort);
-  console.log("Target levelOfEffort:", d.target.levelOfEffort);
   return d.source.levelOfEffort > 0.8 || d.target.levelOfEffort > 0.8
     ? "grey"
     : "#000000";
@@ -498,4 +529,12 @@ function wrap(text, width) {
       }
     }
   });
+
+  window.addEventListener("resize", function() {
+    const newWidth = window.innerWidth;
+    const newHeight = window.innerHeight;
+
+    svg.attr("width", newWidth)
+       .attr("height", newHeight);
+});
 }

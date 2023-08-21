@@ -324,12 +324,6 @@ const data = {
           stress: 0,
           children: [
             {
-              name: "Use level of effort to make the balls fuzzy. Lots of tech debt",
-              importance: 1,
-              stress: 0.2,
-              levelOfEffort: 0,
-            },
-            {
               name: "Support mobile better",
               importance: 0.3,
               stress: 0.1,

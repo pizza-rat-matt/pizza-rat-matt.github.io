@@ -102,24 +102,8 @@ const data = {
             {
               name: "Erwina",
               importance: 1,
-              stress: 0.8,
+              stress: 0.5,
               levelOfEffort: 0,
-              children: [
-                {
-                  name: "Wejdan",
-                  importance: 0.8,
-                  stress: 1,
-                  levelOfEffort: 0,
-                  children: [
-                    {
-                      name: "Shreyash",
-                      importance: 0.6,
-                      stress: 1,
-                      levelOfEffort: 0,
-                    },
-                  ],
-                },
-              ],
             },
             {
               name: "Establish a baseline",
@@ -198,14 +182,6 @@ const data = {
           importance: 0.7,
           stress: 0,
           levelOfEffort: 1,
-          children: [
-            {
-              name: "Wejdan's project",
-              importance: 0.4,
-              stress: 0.6,
-              levelOfEffort: 0,
-            },
-          ],
         },
         {
           name: "Media insights",

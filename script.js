@@ -219,26 +219,6 @@ const data = {
               stress: 1,
               levelOfEffort: 0,
             },
-            {
-              name: "Quality explainer",
-              importance: 0.8,
-              stress: 0.95,
-              levelOfEffort: 1,
-              children: [
-                {
-                  name: "Final read through",
-                  importance: 1,
-                  stress: 1,
-                  levelOfEffort: 0,
-                },
-                {
-                  name: "Inspection data addition",
-                  importance: 1,
-                  stress: 1,
-                  levelOfEffort: 0,
-                },
-              ],
-            },
           ],
         },
         {
